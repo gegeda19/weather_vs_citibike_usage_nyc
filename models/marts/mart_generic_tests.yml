@@ -1,0 +1,36 @@
+version: 2 
+
+models: 
+  - name: mart_citibike_usage
+    columns: 
+      - name: start_date
+        tests:
+          - not_null
+          - unique
+      - name: season
+        tests:
+          - accepted_values:
+              values: ['Spring','Summer','Fall','Winter']
+  - name: mart_citibike_demo
+    columns: 
+      - name: gender
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Female','Male','Unknown']
+  - name: mart_nyc_weather
+    columns:
+      - name: date
+        tests:
+          - not_null
+      - name: season
+        tests:
+          - accepted_values:
+              values: ['Spring','Summer','Fall','Winter']
+        
+          
+          
+          
+  
+  
+
