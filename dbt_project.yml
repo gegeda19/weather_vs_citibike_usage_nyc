@@ -2,7 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'weather_vs_citibike_usage_nyc'
 version: '1.0.0'
 config-version: 2
 
@@ -36,14 +36,17 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  data_pipeline:
+  weather_vs_citibike_usage_nyc:
     # Applies to all files under models/example/
     staging:
       +materialized: table
+      +schema: staging
       snowflake_warehouse: COMPUTE_WH
     intermediate:
       +materialized: table
+      +schema: intermediate
       snowflake_warehouse: COMPUTE_WH
     marts:
       +materialized: table
+      +schema: marts
       snowflake_warehouse: COMPUTE_WH

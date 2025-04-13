@@ -1,0 +1,31 @@
+version: 2 
+
+sources: 
+  - name: STG_SOURCE
+    database: CASE_STUDY
+    schema: RAW
+    tables:
+      - name: RAW_CITIBIKE
+        columns: 
+          - name: STARTTIME
+            tests:
+              - not_null
+          - name: STOPTIME
+            tests:
+              - not_null
+      - name: RAW_WEATHER_INFO
+        columns: 
+          - name: TIMESTAMP
+            tests:
+              - not_null
+          - name: WEATHER_MAIN
+            tests:
+              - not_null
+          - name: WEATHER_DESC
+            tests:
+              - not_null
+
+          
+  
+  
+
